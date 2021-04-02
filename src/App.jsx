@@ -6,10 +6,8 @@ export default function App() {
   return (
     <Router>
       <div className="App">
-        <div className="container-fluid">
-          <h2>title</h2>
-          <SignupForm />
-        </div>
+        <h2>title</h2>
+        <SignupForm />
       </div>
     </Router>
   );
