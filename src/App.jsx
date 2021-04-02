@@ -4,11 +4,13 @@ import SignupForm from "./components/SignupForm/SignupForm";
 
 export default function App() {
   return (
-    <div className="container-fluid">
+    <Router>
       <div className="App">
-        <h2>title</h2>
-        <SignupForm />
+        <div className="container-fluid">
+          <h2>title</h2>
+          <SignupForm />
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
