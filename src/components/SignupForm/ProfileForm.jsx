@@ -1,21 +1,23 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
-import { SignupFormContext } from "./SignupFormContext";
+import { useSignupForm } from "./SignupFormContext";
 
 export default function ProfileForm() {
   const { register, handleSubmit, errors } = useForm();
   const history = useHistory();
-  const { message } = useContext(SignupFormContext);
+  const { profile, setProfile } = useSignupForm();
 
   function onSubmit(data) {
-    console.log(data);
+    setProfile(data);
     history.push("/social");
   }
+  console.log(profile);
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
       <h2>Tell us about yourself</h2>
       <input
+        defaultValue={profile.name}
         type="text"
         name="name"
         ref={register({ required: true })}
@@ -23,6 +25,7 @@ export default function ProfileForm() {
       />
       <p>{errors.name && "Name is required."}</p>
       <input
+        defaultValue={profile.email}
         type="email"
         name="email"
         ref={register({

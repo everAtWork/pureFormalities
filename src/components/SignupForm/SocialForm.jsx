@@ -1,19 +1,22 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
+import { useSignupForm } from "./SignupFormContext";
 
 export default function SocialForm() {
   const { register, handleSubmit, errors } = useForm();
   const history = useHistory();
+  const { social, setSocial } = useSignupForm();
 
   function onSubmit(data) {
-    console.log(data);
-    history.push("/social");
+    setSocial(data);
+    history.push("/review");
   }
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
       <h2>How can we find you on socials?</h2>
       <input
+        defaultValue={social.twitter}
         type="text"
         name="twitter"
         ref={register({ required: true })}
@@ -21,6 +24,7 @@ export default function SocialForm() {
       />
       <p>{errors.twitter && "Twitter account is required."}</p>
       <input
+        defaultValue={social.facebook}
         type="text"
         name="facebook"
         ref={register({

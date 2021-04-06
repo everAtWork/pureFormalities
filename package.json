@@ -1,7 +1,7 @@
 {
-  "name": "pure-formalities",
+  "name": "formalite",
   "version": "1.0.0",
-  "description": "",
+  "description": "a good exercise to keep up with how multi-step forms are done",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
