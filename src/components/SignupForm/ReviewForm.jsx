@@ -1,6 +1,7 @@
 import React from "react";
 import { useSignupForm } from "./SignupFormContext";
-
+import { motion } from "framer-motion";
+import Animator from "./Animator";
 export default function ReviewForm() {
   const { profile, social } = useSignupForm();
 
@@ -11,21 +12,23 @@ export default function ReviewForm() {
     // axios.post('url-goes-here', data)
   }
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Review all your info</h2>
-      <p>
-        <strong>Name</strong>: {profile.name}
-      </p>
-      <p>
-        <strong>Email</strong>: {profile.email}
-      </p>
-      <p>
-        <strong>Twitter</strong>: {social.twitter}
-      </p>
-      <p>
-        <strong>Facebook:</strong>: {social.facebook}
-      </p>
-      <input type="submit" value="Submit all info" />
-    </form>
+    <Animator>
+      <form onSubmit={handleSubmit} className="animated-form">
+        <h2>Review all your info</h2>
+        <p>
+          <strong>Name</strong>: {profile.name}
+        </p>
+        <p>
+          <strong>Email</strong>: {profile.email}
+        </p>
+        <p>
+          <strong>Twitter</strong>: {social.twitter}
+        </p>
+        <p>
+          <strong>Facebook:</strong>: {social.facebook}
+        </p>
+        <input type="submit" value="Submit all info" />
+      </form>
+    </Animator>
   );
 }

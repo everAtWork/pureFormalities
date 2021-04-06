@@ -11,5 +11,12 @@ h2 {
   text-align: center;
 }
 p {
-color: #eee;
+  color: #eee;
+}
+.container-fluid { 
+  position: relative;
+}
+.animated-form {
+  font-family: 'Advent Pro', Arial;
+  // margin: 0 100px;
 }
