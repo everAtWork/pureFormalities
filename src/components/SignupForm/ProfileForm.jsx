@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { motion } from "framer-motion";
+import React from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import { useSignupForm } from "./SignupFormContext";

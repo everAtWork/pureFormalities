@@ -28,11 +28,11 @@ export default function StepLinks() {
         </a>
       )}
       {isProfileDone && isSocialDone ? (
-        <NavLink to="/review" className="float-end">
+        <NavLink to="/review">
           Review <span />
         </NavLink>
       ) : (
-        <a className="float-end">
+        <a>
           Review <span />
         </a>
       )}

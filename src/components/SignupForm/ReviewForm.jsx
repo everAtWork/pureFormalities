@@ -1,6 +1,5 @@
 import React from "react";
 import { useSignupForm } from "./SignupFormContext";
-import { motion } from "framer-motion";
 import Animator from "./Animator";
 export default function ReviewForm() {
   const { profile, social } = useSignupForm();
